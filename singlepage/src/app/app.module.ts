@@ -20,12 +20,15 @@ import { VirtualclassComponent } from './routes/virtualclass/virtualclass.compon
 import { CourseService } from './course.service';
 import { ReviewService } from './review.service';
 import { EnquiryService } from './enquiry.service';
+import { OfferService } from './offer.service';
 import { CourselistComponent } from './routes/home/courselist/courselist.component';
 import { CourseComponent } from './routes/home/course/course.component';
 import { ReviewlistComponent } from './routes/reviews/reviewlist/reviewlist.component';
 import { ReviewComponent } from './routes/reviews/review/review.component';
 import { OffercodePipe } from './offercode.pipe';
 import { FiltercoursePipe } from './filtercourse.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
+import { OfferbannerDirective } from './directives/offerbanner.directive';
 
 const routes=[
 {path:"",component:HomeComponent},
@@ -55,12 +58,14 @@ const routes=[
     ReviewlistComponent,
     ReviewComponent,
     OffercodePipe,
-    FiltercoursePipe
+    FiltercoursePipe,
+    HighlightDirective,
+    OfferbannerDirective
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(routes),HttpClientModule,FormsModule,ReactiveFormsModule
   ],
-  providers: [CourseService,ReviewService,EnquiryService],
+  providers: [CourseService,ReviewService,EnquiryService,OfferService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
